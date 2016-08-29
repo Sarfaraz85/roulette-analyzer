@@ -1,0 +1,12 @@
+package com.me.model;
+
+public enum BetType {
+    RED, BLACK, LOW, HIGH, EVEN, ODD, UPPER_COLUMN, MID_COLUMN, LOWER_COLUMN, DOZEN1, DOZEN2, DOZEN3, STRAIGHT_UP, SPLIT, TRIO, CORNER,
+    LINE,
+    STREET_1to3,
+    STREET_4to6,
+    STREET_7to9,
+    STREET_10to12,
+    STREET_13to16
+
+}
