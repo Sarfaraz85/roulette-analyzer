@@ -26,8 +26,9 @@ public class Chart extends ApplicationFrame {
 //    );
     int index = 0;
 
-    public Chart(String applicationTitle, String chartTitle, List<Integer> data) {
+    public Chart(String applicationTitle, String chartTitle, List<Integer> data, int initialBankroll) {
         super(applicationTitle);
+        bankRoll=initialBankroll;
         JFreeChart lineChart = ChartFactory.createLineChart(
                 chartTitle,
                 "Spin", "Bankroll",

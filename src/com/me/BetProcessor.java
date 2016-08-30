@@ -23,11 +23,10 @@ public class BetProcessor {
 
     public List<Bet> allBets = new ArrayList<>();
 
-//    public List<UserBet> userBets = Arrays.asList(
-//            new UserBet(RED, unitBet)
-//            , new UserBet(LOW, unitBet)
-////            , new UserBet(DOZEN1, unitBet)
-//            , new UserBet(ODD, unitBet));
+    public List<UserBet> userBets = Arrays.asList(
+            new UserBet(CornerBets.TOP1.bet(), 1),
+            new UserBet(CornerBets.BOTTOM2.bet(), 1),
+            new UserBet(CornerBets.BOTTOM3.bet(), 1));
 
     public BetProcessor() {
         for (CornerBets corner : CornerBets.values())
@@ -72,11 +71,11 @@ public class BetProcessor {
         return IntStream.rangeClosed(1, 36).boxed().filter(predicate).collect(Collectors.toList());
     }
 
-//    public static void main(String[] args) {
-//        BetProcessor bets = new BetProcessor();
-////        System.out.println(bets.userWinAmount(2, bets.userBets));
-//
-//
+    public static void main(String[] args) {
+        BetProcessor bets = new BetProcessor();
+        System.out.println(bets.userWinAmount(2, bets.userBets));
+
+
 //        System.out.println(
 //                IntStream.range(0, 37).boxed()
 //                        .peek(s -> System.out.println("*******\ntotal amount wagered = " + bets.userBets.stream().mapToInt(b -> b.wager).sum()))
@@ -89,5 +88,5 @@ public class BetProcessor {
 //                        .peek(s -> System.out.println("new bankroll = " + s))
 //                        .collect(Collectors.toList())
 //        );
-//    }
+    }
 }

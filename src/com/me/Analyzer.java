@@ -75,7 +75,7 @@ public class Analyzer {
         Chart chart = new Chart(
                 "Roulette strategy analyzer",
                 "Bankroll progression",
-                bankrollProgression);
+                bankrollProgression,bankroll);
 
         chart.pack();
         RefineryUtilities.centerFrameOnScreen(chart);

@@ -26,4 +26,23 @@ public class Bet {
                 ", payoff=" + payoff +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bet bet1 = (Bet) o;
+
+        if (bet != null ? !bet.equals(bet1.bet) : bet1.bet != null) return false;
+        return payoff == bet1.payoff;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = bet != null ? bet.hashCode() : 0;
+        result = 31 * result + (payoff != null ? payoff.hashCode() : 0);
+        return result;
+    }
 }
