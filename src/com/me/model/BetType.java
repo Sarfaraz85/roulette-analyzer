@@ -12,8 +12,8 @@ public enum BetType {
     STREET_19to21,
     STREET_22to24,
     STREET_25to27,
-    STREET_19to21,
-    STREET_19to21,
-    STREET_19to21
+    STREET_27to30,
+    STREET_31to33,
+    STREET_34to36
 
 }

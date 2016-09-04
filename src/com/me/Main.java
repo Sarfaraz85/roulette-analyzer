@@ -71,9 +71,9 @@ public class Main {
                 "Bankroll progression",
                 bankrollProgression, initialBankroll);
 
-        chart.pack();
-        RefineryUtilities.centerFrameOnScreen(chart);
-        chart.setVisible(true);
+//        chart.pack();
+//        RefineryUtilities.centerFrameOnScreen(chart);
+//        chart.setVisible(true);
 
 
     }
