@@ -43,25 +43,31 @@ public class Analyzer {
     static List<Integer> OL = Arrays.asList(1, 3, 5, 7, 9, 11, 13, 15, 17);
     static List<Integer> OH = Arrays.asList(19, 21, 23, 25, 27, 29, 31, 33, 35);
 
-    static List<Integer> line_1to6 = Arrays.asList(1,2,3,4,5,6);
-    static List<Integer> line_7to12 = Arrays.asList(7,8,9,10,11,12);
-    static List<Integer> line_13to18 = Arrays.asList(13,14,15,16,17,18);
-    static List<Integer> line_19to24 = Arrays.asList(19,20,21,22,23,24);
-    static List<Integer> line_25to30 = Arrays.asList(25,26,27,28,29,30);
-    static List<Integer> line_31to36 = Arrays.asList(31,32,33,34,35,36);
+    static List<Integer> line_1to6 = Arrays.asList(1, 2, 3, 4, 5, 6);
+    static List<Integer> line_7to12 = Arrays.asList(7, 8, 9, 10, 11, 12);
+    static List<Integer> line_13to18 = Arrays.asList(13, 14, 15, 16, 17, 18);
+    static List<Integer> line_19to24 = Arrays.asList(19, 20, 21, 22, 23, 24);
+    static List<Integer> line_25to30 = Arrays.asList(25, 26, 27, 28, 29, 30);
+    static List<Integer> line_31to36 = Arrays.asList(31, 32, 33, 34, 35, 36);
 
-    static List<Integer> corner_3 = Arrays.asList(8,9,11,12,16,17,19,20,28,29,31,32);
-    static List<Integer> corner_4 = Arrays.asList(10,11,12,13,14,15,22,23,25,26);
-
-
+    static List<Integer> corner_3 = Arrays.asList(8, 9, 11, 12, 16, 17, 19, 20, 28, 29, 31, 32);
+    static List<Integer> corner_4 = Arrays.asList(10, 11, 12, 13, 14, 15, 22, 23, 25, 26);
+    static List<Integer> sector1 = Arrays.asList(0, 2, 4, 6, 14, 16, 18, 21, 23, 31, 33, 35);
+    static List<Integer> sector2 = Arrays.asList(19, 8, 12, 29, 25, 10, 27, 00, 1, 13);
+    static List<Integer> sector00 = Arrays.asList(29, 25, 10, 27, 00, 1, 13, 36, 24);
+    static List<Integer> sector0 = Arrays.asList(23, 35, 14, 2, 0, 28, 9, 26, 30);
+    static List<Integer> sectorL = Arrays.asList(4, 16, 33, 21, 6, 18, 31, 19, 8, 12);
+    static List<Integer> sectorR = Arrays.asList(11,7,20,32,17,5,22,34,15,3);
+    static List<Integer> sector4 = Arrays.asList(1, 13, 36, 24, 3, 15, 34, 22, 5);
 
 
     static int bankroll = 2;
 
     public static void main(String[] args) throws IOException {
+//        sectorR.addAll(sectorL);
         List<Integer> bankrollProgression = Files.lines(Paths.get("/Users/nabyusuf/Downloads/10K.Real.Double0.txt"))
 //                .limit(500)
-                .peek(s -> trackBet(Integer.parseInt(s), corner_4))
+                .peek(s -> trackBet(Integer.parseInt(s), sectorR))
 //                .filter(s -> !isLastSpinWon && lossCtr > 0)
 //                .map(s -> winCtr)
                 .map(s -> lossCtr)
@@ -75,7 +81,7 @@ public class Analyzer {
         Chart chart = new Chart(
                 "Roulette strategy analyzer",
                 "Bankroll progression",
-                bankrollProgression,bankroll);
+                bankrollProgression, bankroll);
 
         chart.pack();
         RefineryUtilities.centerFrameOnScreen(chart);

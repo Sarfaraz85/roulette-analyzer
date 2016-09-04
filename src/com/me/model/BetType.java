@@ -7,6 +7,13 @@ public enum BetType {
     STREET_4to6,
     STREET_7to9,
     STREET_10to12,
-    STREET_13to16
+    STREET_13to15,
+    STREET_16to18,
+    STREET_19to21,
+    STREET_22to24,
+    STREET_25to27,
+    STREET_19to21,
+    STREET_19to21,
+    STREET_19to21
 
 }
